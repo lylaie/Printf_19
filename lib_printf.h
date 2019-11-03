@@ -17,7 +17,7 @@
 # include <stdarg.h>
 # include <unistd.h>
 
-void	ft_pustr(char *str);
+void	ft_putstr(char *str);
 void	ft_putchar(char c);
 void	ft_putnbr(int nb);
 int	ft_printf(char *str, ...);
