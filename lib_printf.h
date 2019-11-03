@@ -16,10 +16,14 @@
 # include <stdio.h>
 # include <stdarg.h>
 # include <unistd.h>
+# include <stdlib.h>
 
 void	ft_putstr(char *str);
 void	ft_putchar(char c);
 void	ft_putnbr(int nb);
-int	ft_printf(char *str, ...);
+int	ft_printf(const char *str, ...);
+
+char	**ft_split(const char *str, char c);
+void	ft_type_of(const char *str);
 
 #endif
