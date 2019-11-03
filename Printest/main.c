@@ -2,7 +2,7 @@
 
 int main(void)
 {
-	ft_printf("%s%d%c", "coucou", 9, '\n');
-	//printf("coucou%s", "string");
-	ft_printf("coucou%s,%dblablabl:%c");
+	ft_printf("%s%d%c%a", "coucou", 9, '\n');
+//	printf("coucou%Q", "string");
+	ft_printf("coucou %s,%d blablabl: %c","mon lapin", 42, 'Z');
 }

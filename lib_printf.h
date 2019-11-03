@@ -13,6 +13,9 @@
 #ifndef LIB_PRINTF_H
 # define LIB_PRINTF_H
 
+# define STRING_ARRAY "string", "digit", "character", "hexa", "pourcent"
+# define FORMAT_CHAR "sdchp"
+
 # include <stdio.h>
 # include <stdarg.h>
 # include <unistd.h>
@@ -24,6 +27,7 @@ void	ft_putnbr(int nb);
 int	ft_printf(const char *str, ...);
 
 char	**ft_split(const char *str, char c);
-void	ft_type_of(const char *str);
+char	ft_type_of(const char *str);
+void	ft_print_format(char type, va_list lst);
 
 #endif

@@ -1,7 +1,7 @@
 /* *************************************************************************** */
 /*                                                                             */
 /*                                                         :::      ::::::::   */
-/*    ft_type_of.c                                       :+:      :+:    :+:   */
+/*    Makefile                                           :+:      :+:    :+:   */
 /*                                                      +:+ +:+         +:+    */  
 /*    By: audumont <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+            */
@@ -12,21 +12,14 @@
 
 #include "../lib_printf.h"
 
-char	ft_type_of(const char *format)
+void	ft_print_format(char type, va_list lst)
 {
-	char *value;
-	char *msg[] = {STRING_ARRAY};
-	int index;
-
-	value = FORMAT_CHAR;
-	++format;
-	index = 0;
-	while (value[index])
-	{
-		if (*format == value[index])
-			return (value[index]);
-		index++;
-	}
-	--format;
-	return 0;
+	if (type == 'c')
+		ft_putchar((char)va_arg(lst, int));
+	else if (type == 's')
+		ft_putstr(va_arg(lst, char*));
+	else if (type == 'd')
+		ft_putnbr(va_arg(lst, int));
+	else
+		ft_putstr("encore à définir");
 }

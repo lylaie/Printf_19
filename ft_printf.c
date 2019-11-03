@@ -15,26 +15,30 @@
 int	ft_printf(const char *format, ...)
 {
 	va_list lst;
-	char *s;
-	int i;
-	char c;
-	char **strs;
 	int	index;
+	char 	type;
+	
 
 	va_start(lst, format);
-	//strs = ft_split(format,'%');
 	while (*format)
 	{
 		if (*format == '%')
-			ft_type_of(format);
+		{
+			if (type = ft_type_of(format))
+				ft_print_format(type, lst);
+		}
+		else
+		{
+			--format;
+			if (*format != '%')
+			{
+				++format;
+				ft_putchar(*format);
+			}
+			else
+				++format;
+		}
 		++format;
 	}
-	index = 0;
-	/*while (strs[index])
-	{
-		ft_putstr(strs[index]);
-		ft_putchar('\n');
-		index++;
-	}*/
 	return (0);
 }
