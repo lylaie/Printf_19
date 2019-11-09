@@ -1,44 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_convert.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: audumont <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/09 15:33:29 by audumont          #+#    #+#             */
-/*   Updated: 2019/11/09 16:39:10 by audumont         ###   ########.fr       */
+/*   Created: 2019/11/09 16:22:42 by audumont          #+#    #+#             */
+/*   Updated: 2019/11/09 20:08:14 by audumont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib_printf.h"
+#include "../lib_printf.h"
 
-int	ft_printf(const char *format, ...)
+void		ft_convert(int nb, int base, char *tank)
 {
-	va_list lst;
-	char 	type;
-	
+	unsigned int nbr;
+	int		sign;
+	int		i;
 
-	va_start(lst, format);
-	while (*format)
+	nbr = nb & ((~0) >> 1);
+	sign = nb > 0 ? 1 : -1;
+	if (nb < 0)
+		ft_putchar('-');
+	if (nbr >= base)
 	{
-		if (*format == '%')
-		{
-			if ((type = ft_type_of(format)))
-				ft_print_format(type, lst);
-		}
-		else
-		{
-			--format;
-			if (*format != '%')
-			{
-				++format;
-				ft_putchar(*format);
-			}
-			else
-				++format;
-		}
-		++format;
+		i = nbr % base;
+		nbr = nbr / base;
+		ft_convert(nbr, base, tank);
+		ft_putchar(tank[i]);
 	}
-	ft_putchar('\n');
-	return (0);
+	else
+		ft_putchar(tank[nbr]);
 }

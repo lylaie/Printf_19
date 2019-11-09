@@ -6,7 +6,7 @@
 /*    By: audumont <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+            */
 /*    Created: 2019/10/10 15:13:55 by audumont          #+#    #+#             */
-/*   Updated: 2019/10/27 11:40:41 by audumont         ###   ########.fr        */
+/*   Updated: 2019/11/09 16:39:46 by audumont         ###   ########.fr       */
 /*                                                                             */
 /* *************************************************************************** */
 
@@ -15,7 +15,6 @@
 char	ft_type_of(const char *format)
 {
 	char *value;
-	char *msg[] = {STRING_ARRAY};
 	int index;
 
 	value = FORMAT_CHAR;
