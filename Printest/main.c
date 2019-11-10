@@ -14,9 +14,20 @@ int main(void)
 	//
 	
 
-	//TESTS DE L AFFICHAGE DES P//
+	/*TESTS DE L AFFICHAGE DES P
 	char *dest;
 	dest = "coucou";
-	printf("affichage en hexa de l'adresse : %p", dest);
-	ft_printf("affichage en hexa de l'adresse : %p", dest);
+	printf("affichage en hexa de l'adresse : %p\n", &dest);
+	ft_printf("affichage en hexa de l'adresse : %p\n", &dest);
+	*/
+
+	/* TESTS DE L AFFICHAGE DES I 
+	printf("affichage des i :%i\n", );*/
+
+	/* TEST DE L AFFICHAGE DES ENTIERS */
+	char *dest;
+	dest = "coucou";
+
+	printf("test de conversion : %d\n", printf("%p", &dest));
+	ft_printf("test de conversion : %d\n", ft_printf("%p", &dest));
 }
