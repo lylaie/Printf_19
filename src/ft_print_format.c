@@ -13,20 +13,27 @@
 
 #include "../lib_printf.h"
 
-void	ft_print_format(char type, va_list lst)
+int	ft_print_format(char type, va_list lst)
 {
 	if (type == 'c')
-		ft_putchar((char)va_arg(lst, int));
+		return (ft_putchar((char)va_arg(lst, int)));
 	else if (type == 's')
+	{
 		ft_putstr(va_arg(lst, char*));
+		return (( long int)va_arg(lst, char*));
+	}
 	else if (type == 'd')
-		ft_convert(va_arg(lst, long long int), 10, BASE_10);
+	{
+		printf("%lli\n", va_arg(lst, long long int));
+		return (ft_putnbr(va_arg(lst, long long int)));
+	}
 	else if (type == 'x' || type == 'p')
 	{
 		if (type == 'p')
 			ft_putstr("0x");
-		ft_convert(va_arg(lst, long long int), 16, BASE_16);
+		return (ft_convert(va_arg(lst, long long int), 16, BASE_16));
 	}
 	else
 		ft_putstr("encore à définir");
+	return (va_arg(lst, int));
 }

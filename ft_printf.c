@@ -16,7 +16,7 @@ int	ft_printf(const char *format, ...)
 {
 	va_list lst;
 	char 	type;
-	
+	int	result;
 
 	va_start(lst, format);
 	while (*format)
@@ -24,7 +24,9 @@ int	ft_printf(const char *format, ...)
 		if (*format == '%')
 		{
 			if ((type = ft_type_of(format)))
-				ft_print_format(type, lst);
+			{
+				result = ft_print_format(type, lst);
+			}
 		}
 		else
 		{
@@ -39,6 +41,5 @@ int	ft_printf(const char *format, ...)
 		}
 		++format;
 	}
-	ft_putchar('\n');
-	return (0);
+	return (result);
 }

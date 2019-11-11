@@ -12,9 +12,9 @@
 
 #include "../lib_printf.h"
 
-void	ft_putnbr(int nb)
+int	ft_putnbr(long long int nb)
 {
-	unsigned int nbr;
+	long long int nbr;
 	int i;
 	int sign;
 
@@ -31,4 +31,5 @@ void	ft_putnbr(int nb)
 	}
 	else
 		ft_putchar(nbr +'0');
+	return (nb);
 }

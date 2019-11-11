@@ -12,23 +12,28 @@
 
 #include "../lib_printf.h"
 
-void		ft_convert(long long int nb, int base, char *tank)
+long long int		ft_convert(long long int nb, int base, char *tank)
 {
 	long long int  nbr;
 	long long int		sign;
 	long long int		i;
+	long long int result;
 
 	nbr = nb & ((~0) >> 1);
 	sign = nb > 0 ? 1 : -1;
+	result = 0;
 	if (nb < 0)
 		ft_putchar('-');
 	if (nbr >= base)
 	{
 		i = nbr % base;
 		nbr = nbr / base;
+		result = result * 10 + i;
 		ft_convert(nbr, base, tank);
 		ft_putchar(tank[i]);
 	}
 	else
 		ft_putchar(tank[nbr]);
+	result = result * 10 + nbr;
+	return (result * sign);
 }

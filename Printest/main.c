@@ -28,6 +28,6 @@ int main(void)
 	char *dest;
 	dest = "coucou";
 
-	printf("test de conversion : %d\n", printf("%p", &dest));
-	ft_printf("test de conversion : %d\n", ft_printf("%p", &dest));
+	printf("test de conversion : %i\n", printf("%p\n", &dest));
+	printf("test de conversion : %i\n", ft_printf("%p\n", &dest));
 }
