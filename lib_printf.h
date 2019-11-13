@@ -25,11 +25,13 @@
 
 void	ft_putstr(char *str);
 int	ft_putchar(char c);
-long long int	ft_convert(long long int nbr, int base, char *tank);
+void	ft_convert(long long int nbr, int base, char *tank);
 int	ft_putnbr(long long int nb);
 int		ft_printf(const char *str, ...);
 char	**ft_split(const char *str, char c);
 char	ft_type_of(const char *str);
 int	ft_print_format(char type, va_list lst);
+int	ft_nblen(long long int nb, int base);
+int	ft_strlen(char *str);
 
 #endif

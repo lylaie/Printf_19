@@ -9,6 +9,8 @@ int main(int argc, char **argv)
 	ft_putstr("coucou");
 	ft_putchar('\n');
 	ft_putnbr(0xaef);
-	printf("%d", 0xaef);
+	printf("%d\n", 0xaef);
+
+	printf("%d\n", aef);
 	
 }

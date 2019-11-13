@@ -19,25 +19,26 @@ int	ft_printf(const char *format, ...)
 	int	result;
 
 	va_start(lst, format);
+	result = 0;
 	while (*format)
 	{
 		if (*format == '%')
 		{
 			if ((type = ft_type_of(format)))
 			{
-				result = ft_print_format(type, lst);
+				result += ft_print_format(type, lst);
 			}
 		}
 		else
 		{
-			--format;
 			if (*format != '%')
 			{
 				++format;
 				ft_putchar(*format);
+				result++;
+				--format;
 			}
-			else
-				++format;
+			
 		}
 		++format;
 	}
