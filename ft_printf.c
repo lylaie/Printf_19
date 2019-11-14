@@ -25,20 +25,16 @@ int	ft_printf(const char *format, ...)
 		if (*format == '%')
 		{
 			if ((type = ft_type_of(format)))
-			{
 				result += ft_print_format(type, lst);
-			}
+			++format;
 		}
 		else
 		{
 			if (*format != '%')
 			{
-				++format;
 				ft_putchar(*format);
 				result++;
-				--format;
 			}
-			
 		}
 		++format;
 	}

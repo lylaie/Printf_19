@@ -13,9 +13,11 @@
 #ifndef LIB_PRINTF_H
 # define LIB_PRINTF_H
 
-# define STRING_ARRAY "string", "digit", "character", "hexa", "pourcent"
-# define FORMAT_CHAR "sdcxp"
+# define STRING_ARRAY "string", "digit", "character", "hexa", "pourcent", "integer",\
+	"unsigned interger", "hexa upper"
+# define FORMAT_CHAR "sdcxpiuX"
 # define BASE_16 "0123456789abcdef"
+# define BASE_16_U "0123456789ABCDEF"
 # define BASE_10 "0123456789"
 
 # include <stdio.h>
