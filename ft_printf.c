@@ -6,17 +6,17 @@
 /*   By: audumont <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/09 15:33:29 by audumont          #+#    #+#             */
-/*   Updated: 2019/11/09 16:39:10 by audumont         ###   ########.fr       */
+/*   Updated: 2019/11/14 20:50:08 by audumont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib_printf.h"
 
-int	ft_printf(const char *format, ...)
+int			ft_printf(const char *format, ...)
 {
-	va_list lst;
-	char 	type;
-	int	result;
+	va_list	lst;
+	char	type;
+	int		result;
 
 	va_start(lst, format);
 	result = 0;
