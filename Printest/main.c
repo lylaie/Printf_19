@@ -56,10 +56,10 @@ int main(void)
 	
 	printf("AFFICHAGE DES RESULTATS DES STRINGS\n");	
 	printf("PRINTF afficha des char : %c, %c, %c, %c\n", c1, c2, c3, c4);
-	ft_printf("FTPRINTF affichage des char : %c, %c, %c, %c\n", c1, c2, c3,c4);
+	//ft_printf("FTPRINTF affichage des char : %c, %c, %c, %c\n", c1, c2, c3,c4);
 
 	printf("PRINTF affichage des char *: %s, %s, %s, %s, %s, %s\n", str1,str2,str3, str4, str5, str6);
-	ft_printf("FTPRINTF affichage des chars *: %s, %s, %s, %s, %s, %s\n", str1, str2, str3, str4, str5, str6);
+	//ft_printf("FTPRINTF affichage des chars *: %s, %s, %s, %s, %s, %s\n", str1, str2, str3, str4, str5, str6);
 
 
 
@@ -96,9 +96,9 @@ int main(void)
 	*/
 
 	/* TEST DE L AFFICHAGE DE U */
-	/* printf("%u\n", -50);
-	 * ft_printf("%u\n", -50);
-	*/
+	 printf("%u\n", -50);
+	ft_printf("%u\n", -50);
+	
 
 	/* TEST DU FLAG 0*/
 	/* printf("%s, %0.5*x","coucou", 0x9);
