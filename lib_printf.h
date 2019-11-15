@@ -6,7 +6,7 @@
 /*   By: audumont <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 20:51:59 by audumont          #+#    #+#             */
-/*   Updated: 2019/11/15 18:47:13 by audumont         ###   ########.fr       */
+/*   Updated: 2019/11/15 20:28:34 by audumont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 # define LIB_PRINTF_H
 
 # define STRING_ARRAY "str", "dig", "char", "hexa", "%", "int","unint", "hexa U"
-# define FORMAT_CHAR "sdcxpiuX"
+# define FORMAT_CHAR "sdcxpiuXo"
+# define FORMAT_FLAGS "-0.*"
+# define BASE_8 "012345678"
 # define BASE_16 "0123456789abcdef"
 # define BASE_16_U "0123456789ABCDEF"
 # define BASE_10 "0123456789"
+# define UNIT_MAX 429496765535
 # include <stdio.h>
 # include <stdarg.h>
 # include <unistd.h>

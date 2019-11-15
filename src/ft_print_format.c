@@ -6,7 +6,7 @@
 /*   By: audumont <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 18:31:40 by audumont          #+#    #+#             */
-/*   Updated: 2019/11/15 18:42:08 by audumont         ###   ########.fr       */
+/*   Updated: 2019/11/15 20:27:18 by audumont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,20 @@
 int					ft_unit_format(char type, va_list lst)
 {
 	long long int	nb;
+	long long int	unitmax;
 
+	unitmax = UNIT_MAX;
 	nb = va_arg(lst, long long int);
-	nb = nb > 0 ? nb : -nb;
-	ft_putnbr(nb);
-	return (ft_nblen(nb, 10));
+	if (nb > 0)
+	{
+		ft_putnbr(nb);
+		return (ft_nblen(nb, 10));
+	}
+	else
+	{
+		ft_putnbr(unitmax - nb);
+		return (ft_nblen(unitmax - nb, 10));
+	}
 }
 
 int					ft_int_format(char type, va_list lst)
@@ -29,6 +38,17 @@ int					ft_int_format(char type, va_list lst)
 	nb = va_arg(lst, long long int);
 	ft_putnbr(nb);
 	return (ft_nblen(nb, 10));
+}
+
+int					ft_check_octal(va_list lst)
+{
+	int				result;
+	long long int	nb;
+
+	result = 0;
+	nb = va_arg(lst, long long int);
+	ft_convert(nb, 8, BASE_8);
+	result += ft_nblen(nb, 8);	
 }
 
 int					ft_print_format(char type, va_list lst)
@@ -54,7 +74,9 @@ int					ft_print_format(char type, va_list lst)
 		result += ft_unit_format(type, lst);
 	else if (type == '%')
 		ft_putchar('%');
-	else
-		ft_putstr("encore à définir");
+	else if (ft_check_flags(type, lst))
+		ft_putchar("coucou");
+	else if (type == 'o')
+		result += ft_check_octal(lst);
 	return (result);
 }

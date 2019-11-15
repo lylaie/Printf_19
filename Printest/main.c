@@ -103,4 +103,7 @@ int main(void)
 	/* TEST DU FLAG 0*/
 	/* printf("%s, %0.5*x","coucou", 0x9);
 	*/
+
+	printf("%x\n", -15);
+	ft_printf("%x\n", -15);
 }
