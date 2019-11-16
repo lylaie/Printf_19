@@ -1,6 +1,6 @@
 #include "../lib_printf.h"
 
-int main(void)
+/*int main(void)
 {
 	char c1 = 'a';
 	char c2 = 'b';
@@ -44,16 +44,15 @@ int main(void)
 	long int	linb3 = - 0xfff45ff;
 	long int	linb4 = -linb3 + linb2;
 	long int	libn5 = -linb3;
-	
+*/	
 	/*unsigned long int nb4;
 	double	nb5;
 	unsigned double nb6;
 	long long int nb7;
 	unsigned long long int nb8;
 	*/
-
 	/* TESTS DE L AFFICHAGE DES STRINGS */
-	
+/*	
 	printf("AFFICHAGE DES RESULTATS DES STRINGS\n");	
 	printf("PRINTF afficha des char : %c, %c, %c, %c\n", c1, c2, c3, c4);
 	//ft_printf("FTPRINTF affichage des char : %c, %c, %c, %c\n", c1, c2, c3,c4);
@@ -68,7 +67,7 @@ int main(void)
 	//printf("deuxième nombre : %x", 155);
 	//ft_printf("deuxième nombre : %x", 155);
 	//
-	
+	*/
 
 	/*TESTS DE L AFFICHAGE DES P
 	char *dest;
@@ -81,14 +80,14 @@ int main(void)
 	printf("affichage des i :%i\n", );*/
 
 	/* TEST DE L AFFICHAGE DES ENTIERS */
-	char *dest;
+	/*char *dest;
 	dest = "coucou";
 
 	//printf("test de conversion : %d\n", printf("%p\n", &dest));
 	//printf("test de conversion : %d\n", ft_printf("%p\n", &dest));
 	//ft_printf("%d\n", ft_printf("%s\n", "coucou"));
 	//
-	
+	*/
 	/* TEST DE L AFFICHAE DE I*/
 	/*
 	 * printf("%i\n", 50);
@@ -96,14 +95,14 @@ int main(void)
 	*/
 
 	/* TEST DE L AFFICHAGE DE U */
-	 printf("%u\n", -50);
+	/* printf("%u\n", -50);
 	ft_printf("%u\n", -50);
-	
+	*/
 
 	/* TEST DU FLAG 0*/
 	/* printf("%s, %0.5*x","coucou", 0x9);
 	*/
-
+/*
 	printf("%x\n", -15);
 	ft_printf("%x\n", -15);
-}
+}*/

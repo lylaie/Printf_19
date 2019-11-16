@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_convert.c                                       :+:      :+:    :+:   */
+/*   main_tests.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: audumont <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/09 16:22:42 by audumont          #+#    #+#             */
-/*   Updated: 2019/11/16 01:23:11 by audumont         ###   ########.fr       */
+/*   Created: 2019/11/16 01:38:33 by audumont          #+#    #+#             */
+/*   Updated: 2019/11/16 01:50:23 by audumont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../lib_printf.h"
 
-void				ft_convert(long long int nb, int base, char *tank)
+int main(void)
 {
-	long long int	nbr;
-	long long int	i;
+	/* Tests des flags */
 
-	nbr = nb & ((~0) >> 1);
-	if (nbr >= base)
-	{
-		i = nbr % base;
-		nbr = nbr / base;
-		ft_convert(nbr, base, tank);
-		ft_putchar(tank[i]);
-	}
-	else
-		ft_putchar(tank[nbr]);
+	ft_printf("%0\n", "coucou");
+	ft_printf("%.x\n", "coucou");
+	ft_printf("%-x\n", "coucou");
+	//ft_printf("%x*\n", "coucou");
 }

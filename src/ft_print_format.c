@@ -6,13 +6,13 @@
 /*   By: audumont <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 18:31:40 by audumont          #+#    #+#             */
-/*   Updated: 2019/11/15 20:27:18 by audumont         ###   ########.fr       */
+/*   Updated: 2019/11/16 02:10:01 by audumont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../lib_printf.h"
 
-int					ft_unit_format(char type, va_list lst)
+int					ft_unit_format(va_list lst)
 {
 	long long int	nb;
 	long long int	unitmax;
@@ -31,7 +31,7 @@ int					ft_unit_format(char type, va_list lst)
 	}
 }
 
-int					ft_int_format(char type, va_list lst)
+int					ft_int_format(va_list lst)
 {
 	long long int	nb;
 
@@ -48,13 +48,13 @@ int					ft_check_octal(va_list lst)
 	result = 0;
 	nb = va_arg(lst, long long int);
 	ft_convert(nb, 8, BASE_8);
-	result += ft_nblen(nb, 8);	
+	return (result += ft_nblen(nb, 8));
+	
 }
 
 int					ft_print_format(char type, va_list lst)
 {
 	int				result;
-	long long int	nb;
 	char			*str1;
 
 	result = 0;
@@ -67,16 +67,18 @@ int					ft_print_format(char type, va_list lst)
 		result = ft_strlen(str1);
 	}
 	else if (type == 'd' || type == 'i')
-		result = ft_int_format(type, lst);
+		result = ft_int_format(lst);
 	else if (type == 'x' || type == 'p' || type == 'X')
 		result += ft_check_format(type, lst);
 	else if (type == 'u')
-		result += ft_unit_format(type, lst);
+		result += ft_unit_format(lst);
 	else if (type == '%')
 		ft_putchar('%');
-	else if (ft_check_flags(type, lst))
-		ft_putchar("coucou");
+	else if (ft_check_flags(type, lst) > 0)
+		ft_putstr("coucou");
 	else if (type == 'o')
 		result += ft_check_octal(lst);
+	else
+		ft_putstr("rien trouve");
 	return (result);
 }
