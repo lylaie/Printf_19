@@ -6,7 +6,7 @@
 /*   By: audumont <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 20:51:59 by audumont          #+#    #+#             */
-/*   Updated: 2019/11/16 01:48:41 by audumont         ###   ########.fr       */
+/*   Updated: 2019/11/17 17:03:05 by audumont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # define STRING_ARRAY "str", "dig", "char", "hexa", "%", "int","unint", "hexa U"
 # define FORMAT_CHAR "sdcxpiuXo-0.*"
-# define FORMAT_FLAGS "-0.*"
+# define FORMAT_FLAGS "-0.*lh'#+"
 # define BASE_8 "012345678"
 # define BASE_16 "0123456789abcdef"
 # define BASE_16_U "0123456789ABCDEF"
@@ -36,7 +36,12 @@ char		ft_type_of(const char *str);
 int			ft_print_format(char type, va_list lst);
 int			ft_nblen(long long int nb, int base);
 int			ft_strlen(char *str);
-int			ft_check_format(char type, va_list lst);
+int			ft_check_format(const char *format, char type, va_list lst);
+
 int			ft_check_flags(char type, va_list lst);
+
+char		ft_type_of_flags(const char *format);
+int			ft_check_flags_bis(const char *format, char type, va_list lst);
+int			ft_printf_bis(const char *format, ...);
 
 #endif

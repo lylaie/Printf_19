@@ -11,6 +11,7 @@ int main(int argc, char **argv)
 	ft_putnbr(0xaef);
 	printf("%d\n", 0xaef);
 
-	printf("%d\n", aef);
+	//printf("%d\n", aef);
 	
+	printf("%-005d",50);
 }

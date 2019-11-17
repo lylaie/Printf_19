@@ -1,35 +1,59 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_printf_bis.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: audumont <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/09 15:33:29 by audumont          #+#    #+#             */
-/*   Updated: 2019/11/17 15:51:05 by audumont         ###   ########.fr       */
+/*   Created: 2019/11/17 16:20:43 by audumont          #+#    #+#             */
+/*   Updated: 2019/11/17 16:35:11 by audumont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib_printf.h"
 
-int			ft_printf(const char *format, ...)
+
+char		ft_type_of_flags(const char *format)
+{
+	char	*value;
+	int		index;
+	char	*check;
+
+	value = FORMAT_FLAGS;
+	check = (char*)format;
+	++check;
+	index = 0;
+	while (value[index])
+	{
+		if (*check == value[index])
+		{
+			if (*check == 'l' && ++(*check) == 'l')
+				return ('L');
+
+			if (*check == 'h' && ++(*check) == 'h')
+				return ('H');
+			index++;
+		}
+	}
+	--check;
+	return (0);
+}
+
+
+int			ft_printf_bis(const char * format, ...)
 {
 	va_list	lst;
-	char	type;
 	int		result;
-	int		len_flag;
-
+	char	type;
+	
 	va_start(lst, format);
 	result = 0;
-	len_flag = 0;
 	while (*format)
 	{
 		if (*format == '%')
 		{
-			if ((type = ft_type_of(format)))
-				if (type == '0' || type == '.' || type == '-' || type == '*')
-					len_flag += ft_check_flags(format, type, lst);
-				result += ft_print_format(type, lst);
+			if (type == ft_type_of_flags(format) > 0)
+				printf("%c\n", type);
 			++format;
 		}
 		else
@@ -44,3 +68,4 @@ int			ft_printf(const char *format, ...)
 	}
 	return (result);
 }
+
