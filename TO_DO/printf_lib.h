@@ -6,7 +6,7 @@
 /*   By: audumont <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/21 13:35:40 by audumont          #+#    #+#             */
-/*   Updated: 2019/11/21 18:44:23 by audumont         ###   ########.fr       */
+/*   Updated: 2019/11/21 21:21:24 by audumont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,9 @@ typedef	struct		s_flags
 
 void				ft_initialize_flags(t_flags flags);
 char				ft_type_of(const char *format, t_flags flags, va_list lst);
-int				ft_type_of_flags(const char *format, t_flags flags, char type, va_list lst);
+int					ft_type_of_flags(const char *format, t_flags flags, char type, va_list lst);
 int					ft_printf(const char *format, ...);
 void				ft_putchar(char c);
+int					ft_print_format(char type, va_list lst, t_flags flags);
 
 #endif

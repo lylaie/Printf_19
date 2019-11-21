@@ -6,7 +6,7 @@
 /*   By: audumont <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/21 13:32:03 by audumont          #+#    #+#             */
-/*   Updated: 2019/11/21 17:34:05 by audumont         ###   ########.fr       */
+/*   Updated: 2019/11/21 21:20:31 by audumont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,14 @@ int				ft_printf(const char *format, ...)
 
 	va_start(lst, format);
 	result = 0;
-	printf("hello\n");
 	ft_initialize_flags(flags);
 	while (*format)
 	{
 		ft_initialize_flags(flags);
 		if (*format == '%')
 		{
-			if (type == ft_type_of(format, flags, lst) > 0)
-				printf("%c\n", type);
+			if ((type = ft_type_of(format, flags, lst)>0))
+					result += ft_print_format(format, type, lst, flags);	
 			++format;
 		}
 		else

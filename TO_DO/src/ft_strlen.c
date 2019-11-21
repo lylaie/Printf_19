@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   showflags.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: audumont <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/21 13:51:19 by audumont          #+#    #+#             */
-/*   Updated: 2019/11/21 21:13:52 by audumont         ###   ########.fr       */
+/*   Created: 2019/11/21 21:28:54 by audumont          #+#    #+#             */
+/*   Updated: 2019/11/21 21:29:30 by audumont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../printf_lib.h"
 
-int	main()
+int		ft_strlen(char *str)
 {
-	//printf("coucou\n");
-	ft_printf("%ll");
-	ft_printf("%d");
-	ft_printf("%h");
-	ft_printf("%k");	
+	int	len;
+
+	len = 0;
+	while (str[len])
+		len++;
+	return (len);
 }

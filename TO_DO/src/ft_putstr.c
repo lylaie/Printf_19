@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   showflags.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: audumont <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/21 13:51:19 by audumont          #+#    #+#             */
-/*   Updated: 2019/11/21 21:13:52 by audumont         ###   ########.fr       */
+/*   Created: 2019/11/21 21:27:33 by audumont          #+#    #+#             */
+/*   Updated: 2019/11/21 21:28:40 by audumont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../printf_lib.h"
 
-int	main()
+void	ft_putstr(char *str)
 {
-	//printf("coucou\n");
-	ft_printf("%ll");
-	ft_printf("%d");
-	ft_printf("%h");
-	ft_printf("%k");	
+	int	index;
+
+	index = 0;
+	while (str[index])
+	{
+		write(1, &str[index], 1);
+		index++;
+	}
 }
