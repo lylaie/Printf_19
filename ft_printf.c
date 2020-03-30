@@ -3,44 +3,70 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: audumont <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: macbook <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/09 15:33:29 by audumont          #+#    #+#             */
-/*   Updated: 2019/11/17 15:51:05 by audumont         ###   ########.fr       */
+/*   Created: 2020/02/25 17:10:10 by macbook           #+#    #+#             */
+/*   Updated: 2020/03/27 17:48:48 by macbook          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib_printf.h"
+#include "lib/ft_printf.h"
+#include <strings.h>
 
-int			ft_printf(const char *format, ...)
+static size_t	ft_printf_part_two(char *str, int format)
 {
-	va_list	lst;
-	char	type;
-	int		result;
-	int		len_flag;
+		size_t	len;
+		int		index;
 
-	va_start(lst, format);
-	result = 0;
-	len_flag = 0;
-	while (*format)
-	{
-		if (*format == '%')
+		index = 0;
+		len = ft_strlen(str);
+		if (format == 1)
+			ft_putstr(str);
+		else if (format == 2)
 		{
-			if ((type = ft_type_of(format)))
-				if (type == '0' || type == '.' || type == '-' || type == '*')
-					len_flag += ft_check_flags(format, type, lst);
-				result += ft_print_format(type, lst);
+			while (str[index])
+			{
+				if (str[index] == -1)
+				{
+					write(1, 0, 1);
+					break;
+				}
+				write(1, &str[index], 1);
+				index++;
+			}
+			len = index;
+		}
+		return (len);
+}
+
+int	ft_printf(const char *format, ...)
+{
+	va_list lst;
+	t_t		t_save;
+	char	*tmp_c;
+	size_t	len;
+	char 	*tmp_s;
+	
+	va_start(lst, format);
+	ft_init(&(t_save.t_final));
+	while (*format && (t_save.t_final.okay == 1))
+	{
+		ft_reinit(&t_save);
+		if (*format == '%')
+			format = ft_parser(lst, format, &t_save);
+		else
+		{				
+			tmp_c = ft_c_to_str(*format);
+			tmp_s = t_save.t_final.f_str;
+			//free(t_save.t_final.f_str);
+			t_save.t_final.f_str = ft_strjoin(tmp_s, tmp_c);
+			free(tmp_c);
+			free(tmp_s);
 			++format;
 		}
-		else
-		{
-			if (*format != '%')
-			{
-				ft_putchar(*format);
-				result++;
-			}
-		}
-		++format;
 	}
-	return (result);
+	len = t_save.t_final.okay ? ft_printf_part_two(t_save.t_final.f_str, t_save.t_final.okay) : -1;
+	free(t_save.t_final.f_str);
+	va_end(lst);
+	return (len);
 }
