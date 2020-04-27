@@ -6,7 +6,7 @@
 /*   By: audumont <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 17:42:11 by audumont          #+#    #+#             */
-/*   Updated: 2020/03/20 13:25:18 by macbook          ###   ########.fr       */
+/*   Updated: 2020/04/27 02:35:23 by macbook          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,10 @@ char		*ft_conv_pou(char *str, t_t *t_save);
 */
 
 char		*ft_show_i(long long int nb, char *str_nb, char *str, t_t *t_save);
+size_t		ft_show_i_2(size_t str_len, char **str, t_t *t_save, size_t lnb);
+char		*ft_show_i_5(char *snb, char *str, t_t *t_save, size_t len_nb);
 char		*ft_show_u(char *str_nb, char *str, t_t *t_save);
+
 
 /*
  ** CLEANING FUNCTIONS

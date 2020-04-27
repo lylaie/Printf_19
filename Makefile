@@ -6,7 +6,7 @@
 #    By: audumont <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/29 20:29:19 by audumont          #+#    #+#              #
-#    Updated: 2020/03/20 13:24:52 by macbook          ###   ########.fr        #
+#    Updated: 2020/04/27 02:34:47 by macbook          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,7 @@ SRCS = ft_printf.c \
 		$(INIT_P)ft_reinit.c \
 		\
 		$(SHOW_P)ft_show_integer.c $(SHOW_P)ft_show_unsigned.c \
+		$(SHOW_P)ft_show_integers_2.c\
 		\
 		$(CLEAN_P)ft_free_tt.c $(CLEAN_P)ft_free_string.c \
 		$(CLEAN_P)ft_free_struct.c
