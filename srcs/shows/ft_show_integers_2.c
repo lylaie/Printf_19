@@ -6,7 +6,7 @@
 /*   By: macbook <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/27 02:24:17 by macbook           #+#    #+#             */
-/*   Updated: 2020/04/27 02:36:15 by macbook          ###   ########.fr       */
+/*   Updated: 2020/04/30 15:44:52 by macbook          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ char	*ft_show_i_5(char *snb, char *str, t_t *t_save, size_t len_nb)
 	size_t	str_len;
 	char	c;
 	char	*dash_str;
-	
-	str_len = ft_strlen(str);	
+
+	str_len = ft_strlen(str);
 	offset = ft_show_i_2(str_len, &str, t_save, len_nb);
 	dash_str = ft_c_to_str('-');
 	if (offset + len_nb < str_len)

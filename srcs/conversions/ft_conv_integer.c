@@ -6,21 +6,22 @@
 /*   By: macbook <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 12:51:41 by macbook           #+#    #+#             */
-/*   Updated: 2020/03/25 14:48:23 by macbook          ###   ########.fr       */
+/*   Updated: 2020/04/30 16:48:06 by macbook          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../lib/ft_printf.h"
 
 /*
- ** Converts the signed integer to a string and calculs the lenght of the number.
+** Converts the signed integer to a string and calculs the lenght of the
+** number.
 */
 
 char	*ft_conv_i(char *str, va_list lst, t_t *t_save)
 {
-	int		nb;
-	char	*str_nb;
-	unsigned  int		nbr;
+	int					nb;
+	char				*str_nb;
+	unsigned int		nbr;
 
 	nb = va_arg(lst, int);
 	if (!nb && !t_save->precision && t_save->t_flags.dot)

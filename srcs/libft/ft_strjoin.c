@@ -6,7 +6,7 @@
 /*   By: macbook <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 14:17:35 by macbook           #+#    #+#             */
-/*   Updated: 2020/03/14 20:45:20 by macbook          ###   ########.fr       */
+/*   Updated: 2020/04/30 16:29:17 by macbook          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_strjoin(const char *s1, const char *s2)
 			dest[index++] = *(s1++);
 	if (s2)
 		while (*s2)
-				dest[index++] = *(s2++);
+			dest[index++] = *(s2++);
 	dest[index] = '\0';
 	return (dest);
 }

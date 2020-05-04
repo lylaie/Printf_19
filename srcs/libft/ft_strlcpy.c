@@ -6,7 +6,7 @@
 /*   By: macbook <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 13:36:04 by macbook           #+#    #+#             */
-/*   Updated: 2020/03/14 21:04:35 by macbook          ###   ########.fr       */
+/*   Updated: 2020/04/30 16:37:27 by macbook          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int	ft_strlcpy(char *str, const char *src, size_t size)
 	unsigned int	index;
 
 	index = 0;
-
 	if (!src)
 		return (size);
 	while (index < size - 1 && src[index])

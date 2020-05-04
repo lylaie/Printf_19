@@ -6,7 +6,7 @@
 /*   By: macbook <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 14:53:43 by macbook           #+#    #+#             */
-/*   Updated: 2020/03/05 14:16:19 by macbook          ###   ########.fr       */
+/*   Updated: 2020/04/30 16:11:23 by macbook          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,4 @@ int		ft_strlcpy(char *str, const char *src, size_t size);
 size_t	ft_strlen(char *str);
 char	*ft_strdup(const char *str);
 
-# endif
+#endif

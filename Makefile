@@ -6,7 +6,7 @@
 #    By: audumont <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/29 20:29:19 by audumont          #+#    #+#              #
-#    Updated: 2020/04/27 02:34:47 by macbook          ###   ########.fr        #
+#    Updated: 2020/04/30 19:23:35 by macbook          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ SRCS = ft_printf.c \
 		$(CONV_P)ft_init_str.c $(CONV_P)ft_init_str_i.c \
 		$(CONV_P)ft_type_of_conversion.c $(CONV_P)ft_conv_p.c \
 		$(CONV_P)ft_conv_pourcent.c $(CONV_P)ft_init_str_p.c\
+		$(CONV_P)ft_conv_s2.c\
 		\
 		$(FLAG_P)ft_flag_dot.c $(FLAG_P)ft_flag_minus.c \
 		$(FLAG_P)ft_flag_star.c $(FLAG_P)ft_flag_zero.c \

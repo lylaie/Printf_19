@@ -6,7 +6,7 @@
 /*   By: macbook <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/05 14:40:08 by macbook           #+#    #+#             */
-/*   Updated: 2020/03/05 14:49:25 by macbook          ###   ########.fr       */
+/*   Updated: 2020/04/30 15:55:18 by macbook          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,5 @@
 
 void	ft_free_tt(t_t *t_save)
 {
-		free(t_save->t_final.f_str);
-		//free(t_save->t_flags);
+	free(t_save->t_final.f_str);
 }

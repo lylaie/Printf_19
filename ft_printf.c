@@ -6,67 +6,63 @@
 /*   By: macbook <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 17:10:10 by macbook           #+#    #+#             */
-/*   Updated: 2020/03/27 17:48:48 by macbook          ###   ########.fr       */
+/*   Updated: 2020/05/04 21:06:02 by macbook          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib/ft_printf.h"
 #include <strings.h>
 
-static size_t	ft_printf_part_two(char *str, int format)
+static size_t	ft_printf2(char *str, int format)
 {
-		size_t	len;
-		int		index;
+	size_t	len;
+	int		index;
 
-		index = 0;
-		len = ft_strlen(str);
-		if (format == 1)
-			ft_putstr(str);
-		else if (format == 2)
+	index = 0;
+	len = ft_strlen(str);
+	if (format == 1)
+		ft_putstr(str);
+	else if (format == 2)
+	{
+		while (str[index])
 		{
-			while (str[index])
+			if (str[index] == -1)
 			{
-				if (str[index] == -1)
-				{
-					write(1, 0, 1);
-					break;
-				}
-				write(1, &str[index], 1);
-				index++;
+				write(1, 0, 1);
+				break ;
 			}
-			len = index;
+			write(1, &str[index], 1);
+			index++;
 		}
-		return (len);
+		len = index;
+	}
+	return (len);
 }
 
-int	ft_printf(const char *format, ...)
+int				ft_printf(const char *format, ...)
 {
 	va_list lst;
-	t_t		t_save;
+	t_t		t_s;
 	char	*tmp_c;
-	size_t	len;
-	char 	*tmp_s;
-	
+	size_t	l;
+
 	va_start(lst, format);
-	ft_init(&(t_save.t_final));
-	while (*format && (t_save.t_final.okay == 1))
+	ft_init(&(t_s.t_final));
+	while (*format && (t_s.t_final.okay == 1))
 	{
-		ft_reinit(&t_save);
+		ft_reinit(&t_s);
 		if (*format == '%')
-			format = ft_parser(lst, format, &t_save);
+			format = ft_parser(lst, format, &t_s);
 		else
-		{				
+		{
 			tmp_c = ft_c_to_str(*format);
-			tmp_s = t_save.t_final.f_str;
-			//free(t_save.t_final.f_str);
-			t_save.t_final.f_str = ft_strjoin(tmp_s, tmp_c);
-			free(tmp_c);
-			free(tmp_s);
+			t_s.t_final.f_str = ft_free_double_string(\
+			ft_strjoin(t_s.t_final.f_str, tmp_c), t_s.t_final.f_str, tmp_c);
 			++format;
 		}
 	}
-	len = t_save.t_final.okay ? ft_printf_part_two(t_save.t_final.f_str, t_save.t_final.okay) : -1;
-	free(t_save.t_final.f_str);
+	l = t_s.t_final.okay ? ft_printf2(t_s.t_final.f_str, t_s.t_final.okay) : -1;
+	free(t_s.t_final.f_str);
 	va_end(lst);
-	return (len);
+	return (l);
 }

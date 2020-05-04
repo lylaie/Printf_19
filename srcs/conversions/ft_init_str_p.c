@@ -6,7 +6,7 @@
 /*   By: macbook <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/20 13:21:48 by macbook           #+#    #+#             */
-/*   Updated: 2020/03/25 14:01:27 by macbook          ###   ########.fr       */
+/*   Updated: 2020/04/30 16:48:58 by macbook          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_init_str_p(t_t *t_save)
 	char	*str;
 	char	filler;
 
-	len = t_save->width  ? t_save->width : 0;
+	len = t_save->width ? t_save->width : 0;
 	if (!(str = (char*)malloc(sizeof(char) * (len + 1))))
 	{
 		t_save->t_final.okay = 0;
