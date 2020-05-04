@@ -6,7 +6,7 @@
 /*   By: audumont <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 17:42:11 by audumont          #+#    #+#             */
-/*   Updated: 2020/05/04 20:54:11 by macbook          ###   ########.fr       */
+/*   Updated: 2020/05/04 22:05:40 by macbook          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
-# include "../srcs/libft/libft.h"
+# include "../libft/libft.h"
 
 /*
  ** CONSTANTES

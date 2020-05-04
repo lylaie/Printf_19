@@ -6,7 +6,7 @@
 #    By: audumont <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/29 20:29:19 by audumont          #+#    #+#              #
-#    Updated: 2020/04/30 19:23:35 by macbook          ###   ########.fr        #
+#    Updated: 2020/05/04 22:05:21 by macbook          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,13 +15,13 @@ CC = @gcc
 HEADER = lib/
 CC_FLAGS = -Wall -Werror -Wextra $(OPTION)
 OPTION = -I $(HEADER)
-LIBFT_P = srcs/libft/
+LIBFT_P = libft/
 
-CONV_P = srcs/conversions/
-FLAG_P = srcs/flags/
-INIT_P = srcs/init/
-SHOW_P = srcs/shows/
-CLEAN_P = srcs/cleaning/
+CONV_P = conversions/
+FLAG_P = flags/
+INIT_P = init/
+SHOW_P = shows/
+CLEAN_P = cleaning/
 
 SRCS = ft_printf.c \
 		$(CONV_P)ft_conv_c.c $(CONV_P)ft_conv_hex.c $(CONV_P)ft_conv_s.c \
